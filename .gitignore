@@ -1,0 +1,7 @@
+# IDEs
+.vscode
+.idea
+.vs
+
+# Only for vscode local history
+.history
