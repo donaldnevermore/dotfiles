@@ -1,9 +1,8 @@
 BasedOnStyle: LLVM
-UseTab: Always
-IndentWidth: 8
-ContinuationIndentWidth: 8
+IndentWidth: 4
 BreakBeforeBraces: Custom
 BraceWrapping:
-  BeforeCatch: true
-  BeforeElse: true
+    BeforeCatch: true
+    BeforeElse: true
 AlignAfterOpenBracket: false
+IndentCaseLabels: true
