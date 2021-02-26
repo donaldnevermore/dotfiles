@@ -1,4 +1,4 @@
 # IDEs
-.vscode
-.idea
-.vs
+.vscode/
+.idea/
+.vs/

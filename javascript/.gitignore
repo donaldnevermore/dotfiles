@@ -1,10 +1,10 @@
 # IDEs
-.vscode
-.idea
-.vs
+.vscode/
+.idea/
+.vs/
 
 # Dependency directories
-node_modules
+node_modules/
 
 # Lock files
 yarn.lock
