@@ -1,6 +1,6 @@
 # Introduction
 
-here's your introduction
+Here's your introduction.
 
 ## Quick start
 
