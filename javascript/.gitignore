@@ -3,9 +3,6 @@
 .idea/
 .vs/
 
-# Dependency directories
+# Dependencies
 node_modules/
-
-# Lock files
-yarn.lock
 package-lock.json
