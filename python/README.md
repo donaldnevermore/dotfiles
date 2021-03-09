@@ -2,7 +2,7 @@
 
 Here's your introduction.
 
-## Quick start
+## Getting started
 
 Step 1: install Python 3.9+
 
