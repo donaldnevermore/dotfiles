@@ -3,7 +3,5 @@
 .idea/
 .vs/
 
-bin/
-out/
-.gradle/
-*.iml
+# CMake
+cmake-build-*/
