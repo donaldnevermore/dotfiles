@@ -2,24 +2,18 @@
 
 Here's your introduction.
 
-## Getting started
+## Getting Started
 
-Step 1: install Python 3.9+
-
-Step 2: install poetry for dependency management
+First, make sure you have Python 3.9+ installed.
+Second, install `poetry` for dependency management.
 
 ```bash
 pip install poetry
-```
-
-Step 3: install dependencies
-
-```bash
 poetry install
 ```
 
-Finally, enjoy your ride~
+Finally, enjoy your ride!
 
 ```bash
-poetry run python file_name.py
+poetry run python my_file.py
 ```

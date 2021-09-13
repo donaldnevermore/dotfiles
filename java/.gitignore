@@ -3,6 +3,7 @@
 .idea/
 .vs/
 
+# Compiled
 bin/
 out/
 .gradle/
