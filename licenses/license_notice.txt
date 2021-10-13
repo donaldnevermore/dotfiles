@@ -1,0 +1,19 @@
+# Notes
+
+Use MIT if you don't care.
+Use BSD if you care about your name.
+
+Use Apache if you want your name seen.
+Use Mozilla if you want to protect your interest.
+Use GPL if you want the strongest protection.
+
+# BSD
+
+Copyright (c) 2021, donaldnevermore
+All rights reserved.
+Licensed under the BSD 3-Clause License. See the LICENSE file in the project root for more information.
+
+# MIT
+
+Copyright (c) 2021 donaldnevermore
+Licensed under the MIT License. See the LICENSE file in the project root for more information.
