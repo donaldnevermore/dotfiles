@@ -17,3 +17,9 @@ Licensed under the BSD 3-Clause License. See the LICENSE file in the project roo
 
 Copyright (c) 2021 donaldnevermore
 Licensed under the MIT License. See the LICENSE file in the project root for more information.
+
+# Apache
+
+Copyright (c) 2021 donaldnevermore
+All rights reserved.
+Licensed under the Apache License, Version 2.0. See the LICENSE file in the project root for more information.

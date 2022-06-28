@@ -1,5 +1,4 @@
 # https://editorconfig.org/
-
 root = true
 
 [*]
@@ -15,18 +14,3 @@ insert_final_newline = true
 indent_style = tab
 indent_size = 8
 tab_width = 8
-
-[*.cs]
-csharp_new_line_before_open_brace = none
-csharp_new_line_before_else = true
-csharp_new_line_before_catch = true
-csharp_new_line_before_finally = true
-
-dotnet_naming_symbols.interface.applicable_kinds = interface
-dotnet_naming_symbols.interface.applicable_accessibilities = *
-
-dotnet_naming_style.pascal.capitalization = pascal_case
-
-dotnet_naming_rule.interface_naming.symbols = interface
-dotnet_naming_rule.interface_naming.style = pascal
-dotnet_naming_rule.interface_naming.severity = suggestion
