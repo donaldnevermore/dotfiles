@@ -24,7 +24,7 @@
             {
                 "anonymous": "always",
                 "named": "never",
-                "asyncArrow": "never"
+                "asyncArrow": "always"
             }
         ],
         "arrow-spacing": "warn",
@@ -32,6 +32,7 @@
         "keyword-spacing": "warn",
         "object-curly-spacing": ["warn", "always"],
         "space-infix-ops": "warn",
+        "@typescript-eslint/space-infix-ops": "warn",
         "space-unary-ops": "warn",
         "semi": ["warn", "never"],
         "semi-spacing": "warn",
