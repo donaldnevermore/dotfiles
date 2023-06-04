@@ -2,7 +2,6 @@
 
 Use MIT if you don't care.
 Use BSD if you care about your name.
-
 Use Apache if you want your name seen.
 Use Mozilla if you want to protect your interest.
 Use GPL if you want the strongest protection.
