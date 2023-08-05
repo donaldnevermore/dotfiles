@@ -5,3 +5,4 @@ AlignTrailingComments: false
 AllowShortFunctionsOnASingleLine: None
 IndentCaseLabels: true
 InsertBraces: true
+ContinuationIndentWidth: 2
