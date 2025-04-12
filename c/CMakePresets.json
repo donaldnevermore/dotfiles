@@ -1,9 +1,9 @@
 {
-    "version": 8,
+    "version": 6,
     "configurePresets": [
         {
-            "name": "myos",
-            "displayName": "GCC 11.4.0 x86_64-linux-gnu",
+            "name": "debug",
+            "displayName": "GCC 14.2.0 x86_64-linux-gnu",
             "description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
@@ -12,6 +12,12 @@
                 "CMAKE_CXX_COMPILER": "/usr/bin/g++",
                 "CMAKE_BUILD_TYPE": "Debug"
             }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "d",
+            "configurePreset": "debug"
         }
     ]
 }
