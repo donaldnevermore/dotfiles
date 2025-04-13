@@ -1,0 +1,3 @@
+# list manually installed packages by the command `apt install`.
+# auto installed dependencies are not included.
+cat /var/log/apt/history.log | grep "apt install"
