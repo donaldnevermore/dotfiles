@@ -17,6 +17,29 @@ if v:progname =~? "evim"
   finish
 endif
 
+" vim-plug
+call plug#begin()
+
+Plug 'preservim/nerdtree'
+Plug 'prabirshrestha/vim-lsp'
+
+call plug#end()
+
+if executable('clangd')
+    augroup lsp_clangd
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd']},
+                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    \ })
+        autocmd FileType c setlocal omnifunc=lsp#complete
+        autocmd FileType cpp setlocal omnifunc=lsp#complete
+        autocmd FileType objc setlocal omnifunc=lsp#complete
+        autocmd FileType objcpp setlocal omnifunc=lsp#complete
+    augroup end
+endif
+
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
