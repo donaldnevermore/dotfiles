@@ -1,4 +1,23 @@
-# IDEs
+# IDE
 .vscode/
 .idea/
 .vs/
+
+# Compiled files
+*.[oa]
+*~
+.cache/
+build/
+cmake-build-*/
+__pycache__/
+
+# C#
+bin/
+obj/
+*.DotSettings
+*.DotSettings.user
+global.json
+
+# JavaScript
+**/node_modules/
+package-lock.json

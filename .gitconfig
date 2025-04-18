@@ -1,0 +1,13 @@
+[user]
+	name = dcwong
+	email = donald33wang@gmail.com
+
+[core]
+	autocrlf = input
+	excludesFile = /home/dcw/.gitignore
+
+[init]
+	defaultBranch = main
+
+[http]
+	sslVerify = false
