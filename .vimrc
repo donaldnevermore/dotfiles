@@ -11,6 +11,12 @@
 "	      for Haiku:  ~/config/settings/vim/vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+" When started as "evim", evim.vim will already have done these settings, bail
+" out.
+if v:progname =~? 'evim'
+  finish
+endif
+
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
@@ -52,7 +58,8 @@ endif
 call plug#begin()
 
 Plug 'preservim/nerdtree'
-Plug 'prabirshrestha/vim-lsp'
+Plug 'yegappan/lsp'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -60,24 +67,22 @@ call plug#end()
 " We prepend it with 'silent!' to ignore errors when it's not yet installed.
 silent! colorscheme seoul256
 
-if executable('clangd')
-    augroup lsp_clangd
-        autocmd!
-        autocmd User lsp_setup call lsp#register_server({
-                    \ 'name': 'clangd',
-                    \ 'cmd': {server_info->['clangd']},
-                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-                    \ })
-        autocmd FileType c setlocal omnifunc=lsp#complete
-        autocmd FileType cpp setlocal omnifunc=lsp#complete
-        autocmd FileType objc setlocal omnifunc=lsp#complete
-        autocmd FileType objcpp setlocal omnifunc=lsp#complete
-    augroup end
-endif
+"let lspOpts = #{omniComplete: v:true}
+"autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+let lspServers = [#{
+	\	  name: 'clang',
+	\	  filetype: ['c', 'cpp'],
+	\	  path: '/usr/bin/clangd-19',
+	\	  args: ['--background-index', '--clang-tidy']
+	\ }]
+autocmd User LspSetup call LspAddServer(lspServers)
 
 set number
 set relativenumber
 set cursorline
+set timeout
+set timeoutlen=200
 
 " Sets how many lines of history VIM has to remember
 set history=500
@@ -88,21 +93,32 @@ au FocusGained,BufEnter * silent! checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ' '
-nnoremap <leader>a <Esc>
-inoremap <leader>a <Esc>
-vnoremap <leader>a <Esc>
-nnoremap <leader>q :NERDTree<Cr>
+let mapleader = ';'
+map <leader>a <esc>
+map! <leader>a <esc>
+nmap <leader>x :tabnew<space>
+nmap <leader>q :NERDTree<cr>
+nmap <leader>s :LspFormat<cr>
+nmap <leader>k :LspRename<cr>
+nmap <leader>g :LspGotoDefinition<cr>
+nmap <leader>z :LspHover<cr>
 
 " Turn on the Wild menu
 set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+if has('win16') || has('win32')
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+" Height of the command bar
+" set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
-set hid
+" set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -132,6 +148,11 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Properly disable sound on errors on MacVim
+if has('gui_macvim')
+    autocmd GUIEnter * set vb t_vb=
+endif
+
 " Add a bit extra margin to the left
 set foldcolumn=1
 
@@ -147,6 +168,14 @@ try
     colorscheme desert
 catch
 endtry
+
+" Set extra options when running in GUI mode
+if has('gui_running')
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -172,26 +201,18 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+" Disable highlight when <leader><cr> is pressed
+" map <silent> <leader><cr> :noh<cr>
+
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
 catch
 endtry
-
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-" Clear status line when vimrc is reloaded.
-set statusline=
-
-" Status line left side.
-set statusline+=\ %F%m%r%h\ %w\ %l:%c/%L
-
-" Use a divider to separate the left side from the right side.
-set statusline+=%=
-
-" Status line right side.
-set statusline+=\ CWD:\ %r%{getcwd()}%h\ %P
 

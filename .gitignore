@@ -4,7 +4,7 @@
 .vs/
 
 # Compiled files
-*.[oa]
+*.o
 *~
 .cache/
 build/
