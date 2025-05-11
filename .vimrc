@@ -60,6 +60,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'yegappan/lsp'
 Plug 'vim-airline/vim-airline'
+Plug 'cohama/lexima.vim'
 
 call plug#end()
 
