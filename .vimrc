@@ -53,7 +53,6 @@ if has('syntax') && has('eval')
 endif
 
 " My personal configs begin here.
-
 " vim-plug
 call plug#begin()
 
@@ -63,6 +62,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'cohama/lexima.vim'
 
 call plug#end()
+
+" plugin config
 
 " Color schemes should be loaded after plug#end().
 " We prepend it with 'silent!' to ignore errors when it's not yet installed.
@@ -94,7 +95,7 @@ au FocusGained,BufEnter * silent! checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ';'
+let mapleader = ' '
 map <leader>a <esc>
 map! <leader>a <esc>
 nmap <leader>x :tabnew<space>
