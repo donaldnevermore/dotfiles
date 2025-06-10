@@ -85,6 +85,7 @@ set relativenumber
 set cursorline
 set timeout
 set timeoutlen=200
+set listchars=eol:↲,tab:↦·,space:·
 
 " Sets how many lines of history VIM has to remember
 set history=500
