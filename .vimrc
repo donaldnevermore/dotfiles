@@ -105,14 +105,11 @@ au FocusGained,BufEnter * silent! checktime
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ' '
-map <leader>a <esc>
-map! <leader>a <esc>
-nmap <leader>x :tabnew<space>
-nmap <leader>q :NERDTree<cr>
+nmap <leader>z :tabnew<space>
 nmap <leader>s :LspFormat<cr>
-nmap <leader>k :LspRename<cr>
+nmap <leader>x :LspRename<cr>
 nmap <leader>g :LspGotoDefinition<cr>
-nmap <leader>z :LspHover<cr>
+nmap <leader>k :LspHover<cr>
 
 " Turn on the Wild menu
 set wildmenu
