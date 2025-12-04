@@ -75,13 +75,12 @@ silent! colorscheme seoul256
 let lspServers = [#{
 	\	  name: 'clang',
 	\	  filetype: ['c', 'cpp'],
-	\	  path: '/usr/bin/clangd-19',
+	\	  path: '/usr/bin/clangd',
 	\	  args: ['--background-index', '--clang-tidy']
 	\ }]
 autocmd User LspSetup call LspAddServer(lspServers)
 
 set number
-set relativenumber
 set cursorline
 set timeout
 set timeoutlen=200
