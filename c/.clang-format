@@ -2,5 +2,6 @@ BasedOnStyle: LLVM
 IndentWidth: 4
 ColumnLimit: 120
 AlignEscapedNewlines: Left
-AlignTrailingComments: false
-AlignAfterOpenBracket: DontAlign
+# AllowShortFunctionsOnASingleLine: None
+# AlignAfterOpenBracket: DontAlign
+# AlignTrailingComments: false
